@@ -1,24 +1,32 @@
 #!/bin/bash
 
-# Script para subir projeto para GitHub via CLI
+# Script para subir projeto para GitHub via CLI com GitHub CLI (gh)
 # Autor: Assistente BLACKBOX.AI
-# Uso: ./upload-github.sh (na pasta do projeto)
+# Uso: ./upload-github-com-gh.sh (na pasta do projeto)
+# Pré: Instale GitHub CLI (gh) em cli.github.com
 
-echo "=== Script de Upload para GitHub ==="
+echo "=== Script de Upload para GitHub com GitHub CLI ==="
 echo "Certifique-se de estar na pasta do projeto e que o repo vazio existe no GitHub."
+echo "GitHub CLI (gh) é necessário: instale em cli.github.com se não tiver."
 
-# Pedir inputs
-read -p "Digite seu Username do GitHub: " username
+# Verificar se GitHub CLI (gh) está instalado
+if ! command -v gh &> /dev/null; then
+    echo "ERRO: GitHub CLI (gh) não está instalado."
+    echo "Instale: Windows (winget install GitHub.cli), macOS (brew install gh), Linux (apt install gh)."
+    exit 1
+fi
+
+# Verificar se Git está instalado
+if ! command -v git &> /dev/null; then
+    echo "ERRO: Git não está instalado. Instale em git-scm.com."
+    exit 1
+fi
+
+# Pedir inputs (só token, repo e commit msg)
 read -p "Digite o nome do Repositório no GitHub (ex: spfw-site): " repo_name
 read -p "Digite a mensagem de commit (ex: Initial commit): " commit_msg
 read -s -p "Digite seu Personal Access Token (não visível): " token
 echo ""  # Nova linha após input invisível
-
-# Verificar se Git está instalado
-if ! command -v git &> /dev/null; then
-    echo "ERRO: Git não está instalado. Instale em git-scm.com e tente novamente."
-    exit 1
-fi
 
 # Nome da pasta atual como fallback para repo_name
 current_dir=$(basename "$PWD")
@@ -27,12 +35,21 @@ if [ -z "$repo_name" ]; then
     echo "Usando nome da pasta atual como repo: $repo_name"
 fi
 
-# URL do remote com credenciais embutidas (usado só no push)
-remote_url="https://${username}:${token}@github.com/${username}/${repo_name}.git"
+# Arquivo temporário para o token (seguro, deletado depois)
+temp_token_file=$(mktemp)
+echo "$token" > "$temp_token_file"
+chmod 600 "$temp_token_file"  # Permissões restritas
 
 echo "Iniciando processo..."
 
-# 1. Inicializar Git se não existir
+# 1. Fazer login com GitHub CLI usando o token (sem username!)
+echo "Fazendo login no GitHub via token..."
+gh auth login --with-token < "$temp_token_file" || { echo "ERRO no login: Token inválido ou expirado?"; rm "$temp_token_file"; exit 1; }
+
+# Limpar token temporário imediatamente
+rm "$temp_token_file"
+
+# 2. Inicializar Git se não existir
 if [ ! -d ".git" ]; then
     echo "Inicializando Git..."
     git init || { echo "ERRO no git init"; exit 1; }
@@ -40,34 +57,34 @@ else
     echo "Git já inicializado."
 fi
 
-# 2. Adicionar arquivos
+# 3. Adicionar arquivos
 echo "Adicionando arquivos..."
 git add . || { echo "ERRO no git add"; exit 1; }
 
-# 3. Commit
+# 4. Commit
 echo "Fazendo commit: $commit_msg"
 git commit -m "$commit_msg" || { echo "ERRO no commit (talvez nada para commit?)"; exit 1; }
 
-# 4. Adicionar remote se não existir
+# 5. Adicionar remote (sem token, gh cuida da auth)
+remote_url="https://github.com/$(gh api user --jq .login)/${repo_name}.git"  # Pega username via gh api
+echo "Adicionando remote: $remote_url"
 if git remote | grep -q origin; then
-    echo "Remote 'origin' já existe. Pulando."
+    echo "Remote 'origin' já existe. Atualizando."
+    git remote set-url origin "$remote_url"
 else
-    echo "Adicionando remote: $remote_url"
-    git remote add origin "$remote_url" || { echo "ERRO no remote add"; exit 1; }
-fi
+    git remote add origin "$remote_url"
+fi || { echo "ERRO no remote"; exit 1; }
 
-# 5. Definir branch main
+# 6. Definir branch main
 git branch -M main || echo "Branch main já definida."
 
-# 6. Push com credenciais embutidas (token usado só aqui)
+# 7. Push (gh autentica automaticamente)
 echo "Fazendo push para GitHub..."
-git push -u origin main || { echo "ERRO no push. Verifique username, repo, token ou conflitos."; exit 1; }
+git push -u origin main || { echo "ERRO no push. Verifique repo ou conflitos (tente git pull primeiro)."; exit 1; }
 
 echo "=== SUCESSO! ==="
-echo "Seu projeto foi enviado para https://github.com/${username}/${repo_name}"
+echo "Seu projeto foi enviado para https://github.com/$(gh api user --jq .login)/${repo_name}"
 echo "Revogue o token no GitHub agora (Settings > Developer settings > Personal access tokens)."
 echo "Para pushes futuros: git add . && git commit -m 'msg' && git push"
-
-# Limpeza: Remover credenciais do remote (deixar só a URL sem token para uso futuro)
-git remote set-url origin "https://github.com/${username}/${repo_name}.git"
-echo "Remote atualizado sem token para uso futuro."
+echo "Se sessão expirar: gh auth login --with-token <token> ou use browser."
+echo "Logout se quiser: gh auth logout"
