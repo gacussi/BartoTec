@@ -44,3 +44,4 @@ BartoTec/
 1. Clone o repositório:
    ```bash
    git clone https://github.com/gacussi/BartoTec.git
+2. Configure a database em conexão.php
