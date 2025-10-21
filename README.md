@@ -13,24 +13,22 @@ Com um **design moderno, escuro e roxo**, o projeto busca transmitir o estilo, a
 - **JavaScript** — menu interativo e responsivo  
 - *(Opcional)* PHP e MySQL — para integração futura com formulários e banco de dados
 
-## 📁 Estrutura do Projeto
+📁 **BartoTec/**  
+│  
+├── 🎨 **css/** → contém o arquivo principal de estilos (`style.css`)  
+├── 🖼️ **Imagens/** → reúne as imagens do site (hero, destaques, etc.)  
+├── 🧩 **Icons/** → ícones e favicons utilizados no projeto  
+├── 💾 **db/** → scripts de banco de dados (opcional)  
+│  
+├── 🧠 **index.html** → página inicial com destaque principal  
+├── 📰 **news.html** → seção de notícias da SPFW  
+├── 👗 **estilistas.html** → estilistas participantes  
+├── 🧍‍♀️ **modelos.html** → modelos e destaques das passarelas  
+├── 💬 **contato.html** → formulário de contato  
+├── ℹ️ **sobre.html** → história e informações sobre o evento  
+└── ⚙️ **conexão.php** → conexão com banco de dados (caso usada)
 
-BartoTec/
-├── css/
-│ └── style.css ← estilos principais do site
-├── db/
-│ └── ... ← arquivos de conexão ou scripts (se aplicável)
-├── Imagens/
-│ └── ... ← imagens de fundo e seções
-├── Icons/
-│ └── ... ← ícones e favicon
-├── conexão.php ← arquivo PHP de conexão (opcional)
-├── contato.html ← página de contato
-├── estilistas.html ← página dos estilistas
-├── index.html ← página inicial
-├── modelos.html ← página dos modelos
-├── news.html ← página de notícias
-└── sobre.html ← página "Sobre" com história do evento
+---
 
 ## 💡 Funcionalidades
 - 🎨 **Layout responsivo e moderno** com tema escuro  
