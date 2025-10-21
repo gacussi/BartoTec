@@ -14,12 +14,12 @@ Com um **design moderno, escuro e roxo**, o projeto busca transmitir o estilo, a
 - *(Opcional)* PHP e MySQL — para integração futura com formulários e banco de dados
 
 📁 **BartoTec/**  
-│  
+
 ├── 🎨 **css/** → contém o arquivo principal de estilos (`style.css`)  
 ├── 🖼️ **Imagens/** → reúne as imagens do site (hero, destaques, etc.)  
 ├── 🧩 **Icons/** → ícones e favicons utilizados no projeto  
 ├── 💾 **db/** → scripts de banco de dados (opcional)  
-│  
+  
 ├── 🧠 **index.html** → página inicial com destaque principal  
 ├── 📰 **news.html** → seção de notícias da SPFW  
 ├── 👗 **estilistas.html** → estilistas participantes  
