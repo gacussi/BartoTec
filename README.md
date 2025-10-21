@@ -1,9 +1,13 @@
 # 🪩 BartoTec  
 **Trabalho para a São Paulo Fashion Week – Feira BartoTec 2025**
 
+---
+
 ## 🎯 Visão Geral  
 O **BartoTec** é um site desenvolvido para representar o evento **SPFW (São Paulo Fashion Week)**, destacando **notícias, estilistas, modelos, tendências e contatos**.  
 Com um **design moderno, escuro e roxo**, o projeto busca transmitir o estilo, a criatividade e a inovação do maior evento de moda da América Latina.
+
+---
 
 ## 🧰 Tecnologias Utilizadas  
 - **HTML5** — estrutura semântica e responsiva  
@@ -12,6 +16,8 @@ Com um **design moderno, escuro e roxo**, o projeto busca transmitir o estilo, a
 - **Google Fonts** — Poppins e Barlow Semi Condensed  
 - **JavaScript** — menu interativo e responsivo  
 - *(Opcional)* PHP e MySQL — para integração futura com formulários e banco de dados
+
+---
 
 📁 **BartoTec/**  
 
@@ -37,6 +43,8 @@ Com um **design moderno, escuro e roxo**, o projeto busca transmitir o estilo, a
 - 🔗 **Footer com ícones de redes sociais** (Instagram, X, YouTube e Facebook)  
 - 🌈 **Degradê roxo elegante** no rodapé e títulos destacados  
 - 📱 **Design adaptado para celulares e tablets**
+
+---
 
 ## ⚙️ Como Executar Localmente
 1. Clone o repositório:
