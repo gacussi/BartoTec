@@ -46,6 +46,12 @@ Com um **design moderno, escuro e roxo**, o projeto busca transmitir o estilo, a
 
 ---
 
+## Integrantes do Grupo
+
+- João Pedro
+- Guilherme Acussi
+- Gabriel Miller
+
 ## ⚙️ Como Executar Localmente
 1. Clone o repositório:
    ```bash
