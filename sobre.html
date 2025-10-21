@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPFW - Sobre</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="Icons/sobre.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+    /* HEADER */
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a46cff;
+    }
+
+    /* ===== CONTAINER SOBRE ===== */
+    .container {
+      max-width: 1000px;
+      margin: 10vh auto;
+      padding: 0 25px;
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2.8rem;
+      margin-bottom: 60px;
+      color: #a06cff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+    }
+
+    .container h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #a06cff, #6e3cff);
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #181818, #101010);
+      border: 1px solid #2a2a2a;
+      border-radius: 18px;
+      padding: 40px;
+      text-align: left;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(160, 108, 255, 0.1), transparent 70%);
+      transform: rotate(25deg);
+      transition: opacity 0.5s;
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #a06cff;
+      box-shadow: 0 8px 25px rgba(160, 108, 255, 0.2);
+    }
+
+    .card h3 {
+      color: #a06cff;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.8;
+      text-align: justify;
+      position: relative;
+      z-index: 1;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="titulo">
+      <h1>SPFW</h1>
+      <p>São Paulo Fashion Week</p>
+    </div>
+    <nav>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+      <ul id="main-menu">
+        <li><a href="index.html" style="color:#a06cff;">Home</a></li>
+        <li><a href="news.html">Noticias</a></li>
+        <li><a href="estilistas.html">Estilistas</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Sobre</h2>
+    <div class="card">
+      <h3>História</h3>
+      <p>
+        A <strong>São Paulo Fashion Week (SPFW)</strong> é o <strong>maior evento de moda da América Latina</strong> e
+        um dos mais influentes do mundo.
+        Criada em <strong>1995</strong> por <strong>Paulo Borges</strong>, inicialmente sob o nome <em>Morumbi Fashion
+          Brasil</em>, a SPFW nasceu com o propósito de profissionalizar e internacionalizar a moda brasileira,
+        oferecendo um palco digno para os principais estilistas e marcas do país.
+        <br><br>
+        Desde então, o evento se tornou um <strong>símbolo de inovação e criatividade</strong>, revelando grandes nomes
+        como <strong>Alexandre Herchcovitch, Reinaldo Lourenço, Gloria Coelho, Lino Villaventura, Osklen</strong> e
+        <strong>Ronaldo Fraga</strong>.
+        Mais do que uma simples semana de desfiles, a SPFW é um <strong>movimento cultural</strong>, que une
+        <strong>arte, tecnologia, diversidade e sustentabilidade</strong> para repensar o futuro da moda.
+        <br><br>
+        Ao longo das décadas, a SPFW consolidou o <strong>Brasil no mapa mundial da moda</strong>, ganhando respeito e
+        destaque ao lado de gigantes como <strong>Paris, Milão, Londres</strong> e <strong>Nova York</strong>.
+        Hoje, a SPFW representa <strong>a força, a identidade e a pluralidade da moda brasileira</strong>, sendo um
+        espaço de expressão, liberdade e transformação.
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 SPFW - Todos os direitos reservados</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/spfw/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/SPFW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/spfw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCcslL01-bATnBUw6caIRLkw" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
+
+</body>
+
+</html>

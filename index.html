@@ -1,263 +1,311 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SPFW - São Paulo Fashion Week</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100..900&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPFW - Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="shortcut icon" href="Icons/index.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }   
-
     body {
-      font-family: "Barlow Semi Condensed", sans-serif;
-      color: #eee;
-      background-color: #000;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
       line-height: 1.6;
     }
 
-    header {
-      background-color: black;
-      padding: 25px 30px;
-      border-bottom: 1px solid #444;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .titulo {
-      margin-left: 20px;
-    }
-
-    .titulo h1 {
-      font-size: 3.5rem;
+    .menu-icon {
+      display: none;
+      cursor: pointer;
       color: white;
-      font-weight: 300;
-    }
-
-    .titulo p {
-      font-size: 0.85rem;
-      color: #888;
+      font-size: 2rem;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
-      margin-right: 20px;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
     }
 
-    nav ul li a {
+
+
+    /* HEADER */
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 25px;
       text-decoration: none;
-      color: white;
-      font-size: 1.5rem;
-      transition: color 0.2s ease;
+      font-weight: 300;
+      transition: color 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #888;
+    nav a:hover {
+      color: #a46cff;
     }
 
-    .banner {
-      background-image: url(Imagens/back2.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+    /* HERO */
+    .hero {
+      position: relative;
       height: 85vh;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      padding: 40px 30px;
-      color: #eee;
-      position: relative;
+      text-align: center;
+      background: url('Imagens/back2.jpg') center/cover no-repeat;
     }
 
-    .banner::before {
-      content: '';
+    .hero::after {
+      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(2px);
     }
 
-    .banner-content {
+    .hero-content {
       position: relative;
-      text-align: center;
-      z-index: 1;
-      margin-top: -60px; /* Move o conteúdo um pouco mais para cima */
+      z-index: 2;
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 13vh;
     }
 
-    .banner h2 {
-      font-size: 3rem;
-      font-weight: 100;
-      margin-bottom: 10px;
+    .hero-content h2 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
     }
 
-    .banner p {
-      font-size: 1.1rem;
+    .hero-content p {
+      font-size: 18px;
+      font-weight: 300;
+      color: #ddd;
     }
 
-    .fundo {
-      background-color: #000;
-      width: 100vw;
-      height: 100vh;
-      padding: 3rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      box-sizing: border-box;
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
-    .info {
-      width: 100%;
-      max-width: 500px;
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 30px;
+      border-left: 4px solid #a46cff;
+      padding-left: 10px;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .highlight {
       background-color: #111;
-      color: #eee;
-      padding: 30px;
-      border-radius: 10px;
-      line-height: 1.6;
-      font-size: 1.1rem;
-      text-align: left;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border: 1px solid #222;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
 
-    .info h1 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-      color: white;
-      text-align: center;
-      font-weight: 200;
+    .highlight:hover {
+      transform: scale(1.03);
     }
 
-    .info p {
-      margin-bottom: 1rem;
-      font-size: 1rem;
+    .highlight img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
-    /* Responsividade básica */
-    @media (min-width: 768px) {
-      .info {
-        width: 45%;
-      }
+    .highlight h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 15px;
     }
+
+    .highlight p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 15px 20px;
+    }
+
+    .highlight a {
+      text-decoration: none;
+      color: #a46cff;
+      margin-left: 15px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+
 
     @media (max-width: 768px) {
-      .titulo h1 {
-        font-size: 2.5rem;
-      }
-
-      nav ul li a {
-        font-size: 1.2rem;
-      }
-
-      .banner h2 {
-        font-size: 2rem;
-      }
-
-      .banner-content {
-        margin-top: -40px; /* Ajuste menor para telas menores */
-      }
-
-      .info {
-        padding: 25px;
-      }
-
-      .info h1 {
-        font-size: 1.7rem;
-      }
-
-      .fundo {
-        height: auto;
-        min-height: 100vh;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 20px;
-      }
-
-      .container {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .titulo {
-        margin-left: 0;
-        text-align: center;
+      .menu-icon {
+        display: block;
       }
 
       nav ul {
-        margin-right: 0;
-        justify-content: center;
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 5px;
       }
 
-      .fundo {
-        padding: 2rem 1rem;
-        gap: 2rem;
+      nav ul.active {
+        display: flex;
+      }
+
+      .footer {
+        background: linear-gradient(135deg, #000000, #1a1a1a, #4b0082);
+        color: #fff;
+        text-align: center;
+        padding: 50px 20px;
+        font-family: 'Poppins', sans-serif;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer p {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 35px;
+        /* aumenta o espaço entre os ícones */
+      }
+
+      .social-icons a {
+        color: #fff;
+        font-size: 30px;
+        /* aumenta o tamanho dos ícones */
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #b266ff;
+        transform: scale(1.25);
+        /* aumenta o zoom no hover */
       }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <div class="container">
-      <div class="titulo">
-        <h1>SPFW</h1>
-        <p>São Paulo Fashion Week</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="desfiles.html">Desfiles</a></li>
-          <li><a href="news.html">News</a></li>
-        </ul>
-      </nav>
+    <div class="titulo">
+      <h1>SPFW</h1>
+      <p>São Paulo Fashion Week</p>
     </div>
+    <nav>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+      <ul id="main-menu">
+        <li><a href="news.html" style="color:#a06cff;">Noticias</a></li>
+        <li><a href="estilistas.html">Estilistas</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="banner">
-    <div class="banner-content">
-      <h2>Bem-vindo à SPFW</h2>
-      <p>O maior evento de moda do Brasil e da América Latina.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>São Paulo Fashion Week</h2>
+      <p>O coração da moda brasileira, onde criatividade e diversidade se encontram.</p>
     </div>
   </section>
 
-  <div class="fundo">
-    <div class="info">
-      <h1>O que é SPFW?</h1>
-      <p>O São Paulo Fashion Week (SPFW) é o maior evento de moda do Brasil e da América Latina. Desde 1996, acontece duas vezes ao ano para apresentar as coleções das próximas estações, reunindo estilistas, marcas, modelos, imprensa e público em uma celebração da criatividade, inovação e diversidade.</p>
+  <div class="container">
+    <h2 class="section-title">Destaques Recentes</h2>
+    <div class="highlights">
+      <div class="highlight">
+        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=600&q=80"
+          alt="Desfile 1">
+        <h3>SPFW N59: Moda e Sustentabilidade</h3>
+        <p>A nova edição da SPFW trouxe foco em tecidos reciclados e design consciente.</p>
+        <a href="#">Ler mais →</a>
+      </div>
 
-      <p>Além de definir tendências, o SPFW fortalece o design brasileiro e impulsiona a economia, unindo moda, arte, cultura e sustentabilidade. Ao longo dos anos, o evento evoluiu, abraçando a diversidade social e representando diferentes corpos, gêneros e etnias.</p>
+      <div class="highlight">
+        <img
+          src="https://s2.glbimg.com/ISiDPwQ3gAFzYkJrLZk1WOiSSao=/512x320/smart/e.glbimg.com/og/ed/f/original/2020/03/23/gettyimages-113979573.jpg"
+          alt="Desfile 2">
+        <h3>Novas marcas em ascensão</h3>
+        <p>Jovens estilistas brasileiros ganham destaque nas passarelas da capital paulista.</p>
+        <a href="#">Ler mais →</a>
+      </div>
 
-      <p>Mais que desfiles, o SPFW é um fenômeno cultural que influencia o comportamento do consumidor e a indústria da moda, expressando identidade e estilo de forma única.</p>
-    </div>
-
-    <div class="info">
-      <h1>Como funciona a SPFW?</h1>
-      <p>A São Paulo Fashion Week (SPFW) acontece duas vezes ao ano, geralmente em abril e outubro, para apresentar as coleções das próximas estações do ano. O evento reúne estilistas renomados, marcas, modelos, imprensa, influenciadores e compradores, que participam de desfiles e apresentações exclusivas.</p>
-
-      <p>Além dos desfiles, a SPFW promove palestras, debates e atividades que discutem inovação, sustentabilidade e diversidade na moda, fortalecendo o design brasileiro e integrando o mercado nacional ao internacional.</p>
-
-      <p>Com foco em representar diferentes corpos, gêneros e etnias, o evento é uma plataforma cultural e econômica que influencia tendências, comportamento do consumidor e a indústria da moda no Brasil e no mundo.</p>
+      <div class="highlight">
+        <img src="https://images.unsplash.com/photo-1560072810-1cffb09faf0f?auto=format&fit=crop&w=600&q=80"
+          alt="Desfile 3">
+        <h3>As cores da próxima estação</h3>
+        <p>Paleta vibrante e contrastes elegantes marcam as tendências da temporada.</p>
+        <a href="#">Ler mais →</a>
+      </div>
     </div>
   </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 SPFW - Todos os direitos reservados</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/spfw/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/SPFW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/spfw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCcslL01-bATnBUw6caIRLkw" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 
+
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
 </body>
+
 </html>

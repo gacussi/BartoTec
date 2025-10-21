@@ -1,146 +1,387 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPFW - São Paulo Fashion Week</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100..900&display=swap" rel="stylesheet">
+  <title>SPFW - Notícias e Tendências</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="Icons/news.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      font-family: "Barlow Semi Condensed", sans-serif;
-      background-color: #fff;
-      color: #333;
+      background-color: #0d0d0d;
+      color: #fff;
     }
 
-    header {
-      background-color: black;
-      padding: 25px 30px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      
-    }
-
-    .titulo {
-            margin-left: 20px;
-            margin-bottom: 10px;
-
-
-    }
-
-    .titulo h1 {
-      font-size: 3.5rem;
-      font-family: "Barlow Semi Condensed", sans-serif;
+    .menu-icon {
+      display: none;
+      cursor: pointer;
       color: white;
-    }
-
-    .titulo p {
-      font-size: 0.85rem;
-      color: white;
+      font-size: 2rem;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
-      margin-right: 20px;
-
+      gap: 25px;
+      margin: 0;
+      padding: 0;
     }
 
-    nav ul li a {
-       text-decoration: none;
-       color: white;
-       font-size: 1.5rem;
-       transition: color 0.2s ease;
-       margin-right: 20px;
-}
-
-    nav ul li a:hover {
-      color: #888;
-    }
-
-    .content-row {
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px 60px;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      padding: 40px 30px;
-      flex-wrap: wrap;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: 125px;
     }
 
-    .banner {
-      width: 600px;
-      float: left;
-      background-color: beige;
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a46cff;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('Imagens/back2.jpg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
       padding: 20px;
-      border-radius: 15px;
-      margin-top: 5rem;
-      margin-left: 5rem;
-    
     }
 
-    .banner h2 {
-      font-weight: bold;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    .hero-content h2 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
     }
 
-    .banner p {
-      font-size: 1rem;
+    .hero-content p {
+      font-size: 18px;
+      font-weight: 300;
+      color: #ddd;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    nav a {
+      color: #bcbcbc;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #a06cff;
+    }
+
+    /* ===== MAIN ===== */
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .title-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .title-area h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    select {
+      background: #1b1b1b;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    select:hover {
+      border-color: #a06cff;
+    }
+
+    /* ===== GRID ===== */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #a06cff;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 0.9rem;
       line-height: 1.4;
+      color: #bcbcbc;
     }
 
-    
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header>
-    <div class="container">
-      <div class="titulo">
-        <h1>SPFW</h1>
-        <p>São Paulo Fashion Week</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="desfiles.html">Desfiles</a></li>
-        </ul>
-      </nav>
+    <div class="titulo">
+      <h1>SPFW</h1>
+      <p>São Paulo Fashion Week</p>
     </div>
+    <nav>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+      <ul id="main-menu">
+        <li><a href="index.html" style="color:#a06cff;">Home</a></li>
+        <li><a href="estilistas.html">Estilistas</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
   </header>
 
-  
-    <section class="banner">
-      <h2>Coleção da SPFW 30 anos apresentada na New York Fashion Week</h2>
-      <p>
-        A moda brasileira terá destaque na New York Fashion Week 2025 com desfile do Senac em comemoração aos 30 anos da SPFW. A coleção, criada por estudantes e professores sob direção de Paulo Borges, será apresentada no FIT e contará com o lançamento de um livro de Marcello Costa e participações internacionais.
-      </p>
-      <br>
-      <img src="Imagens/desfile-2.jpg" width="560px" style="border-radius: 20px;">
-    </section>
 
-    <section class="banner">
-      <h2>Edição N59 da SPFW com encerramento feito pela Piet</h2>
-      <p> 
-        A edição N59 da SPFW, em abril de 2025, celebrou 30 anos com desfiles em locais icônicos de São Paulo. O evento destacou novos talentos, retorno de marcas e teve encerramento histórico da Piet no Pacaembu.
-      </p>
-      <br>
-        <img src="Imagens/piet-encerra-spfw-n59-com-desfile-historico-no-pacaembu.png" width="560px" style="border-radius: 20px;">
+  <main>
+    <div class="title-area">
+      <h1>Notícias e Tendências</h1>
+      <select id="filtro">
+        <option value="todas">Todas as edições</option>
+        <option value="n59">SPFW N59</option>
+        <option value="n60">SPFW N60</option>
+        <option value="n61">SPFW N61</option>
+      </select>
+    </div>
 
+    <section class="news-grid" id="noticias">
+      <!-- SPFW N59 -->
+      <div class="card" data-edicao="n59">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80"
+          alt="SPFW N59">
+        <div class="card-content">
+          <h2>Edição N59 celebra 30 anos com desfiles icônicos</h2>
+          <p>Desfiles no Theatro Municipal e no Museu do Ipiranga marcaram o retorno das raízes culturais paulistanas.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" data-edicao="n59">
+        <img
+          src="https://s2-gshow.glbimg.com/mEJK7KNXJnnR1YoKGctgHWKG7pg=/0x0:3562x2375/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2024/r/g/XoKQChTHys9bozN3IiuA/whatsapp-image-2024-10-20-at-22.13.26.jpeg"
+          alt="SPFW N59">
+        <div class="card-content">
+          <h2>Novos talentos brilham na passarela</h2>
+          <p>Estilistas emergentes apresentaram coleções ousadas e experimentais, elevando o design nacional.</p>
+        </div>
+      </div>
+
+      <!-- SPFW N60 -->
+      <div class="card" data-edicao="n60">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80"
+          alt="SPFW N60">
+        <div class="card-content">
+          <h2>Streetwear de luxo ganha destaque na N60</h2>
+          <p>O estilo urbano se funde ao luxo minimalista, trazendo uma estética sofisticada e moderna às passarelas.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" data-edicao="n60">
+        <img
+          src="https://s2-vogue.glbimg.com/Mb5CtYmnRYJFvP2EaSqI5ISQoak=/0x0:1024x682/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_5dfbcf92c1a84b20a5da5024d398ff2f/internal_photos/bs/2025/G/A/oRpprAThGcjeBbdsee2A/faranha-spfw60-lb-38.jpg"
+          alt="SPFW N60">
+        <div class="card-content">
+          <h2>Marca “Aurora” estreia com sucesso</h2>
+          <p>Inspirada em arte digital, a marca utiliza tecidos reciclados e técnicas de impressão 3D inovadoras.</p>
+        </div>
+      </div>
+
+      <!-- SPFW N61 -->
+      <div class="card" data-edicao="n61">
+        <img src="https://www.fashionbubbles.com/wp-content/uploads/2025/10/1-sou-de-algodao-spfw-n60.jpg"
+          alt="SPFW N61">
+        <div class="card-content">
+          <h2>Sustentabilidade em alta na SPFW N61</h2>
+          <p>Peças com tecidos biodegradáveis e corantes orgânicos mostram o avanço da moda consciente.</p>
+        </div>
+      </div>
+
+      <div class="card" data-edicao="n61">
+        <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=900&q=80"
+          alt="SPFW N61">
+        <div class="card-content">
+          <h2>Minimalismo futurista define a nova coleção</h2>
+          <p>Linhas retas e tons metálicos traduzem a visão contemporânea da moda paulistana.</p>
+        </div>
+      </div>
     </section>
   </main>
 
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 SPFW - Todos os direitos reservados</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/spfw/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/SPFW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/spfw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCcslL01-bATnBUw6caIRLkw" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+    const filtro = document.getElementById('filtro');
+    const cards = document.querySelectorAll('.card');
+
+    filtro.addEventListener('change', () => {
+      const valor = filtro.value;
+      cards.forEach(card => {
+        if (valor === 'todas' || card.dataset.edicao === valor) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

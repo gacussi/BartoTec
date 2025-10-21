@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPFW - Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="shortcut icon" href="Icons/contato.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a46cff;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://www.weickadvogados.com.br/wp-content/uploads/2021/04/bg-faleconosco.jpg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      font-weight: 300;
+      color: #ccc;
+    }
+
+    /* FORMULÁRIO DE CONTATO */
+    .contact-container {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: #111;
+      border-radius: 12px;
+      border: 1px solid #222;
+    }
+
+    .contact-container h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #a46cff;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 500;
+      color: #ccc;
+    }
+
+    input,
+    textarea {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      resize: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #a46cff;
+      outline: none;
+    }
+
+    button {
+      background-color: #a46cff;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background-color: #8c52ff;
+    }
+
+    /* INFO DE CONTATO */
+    .contact-info {
+      text-align: center;
+      margin-top: 60px;
+      color: #bbb;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="titulo">
+      <h1>SPFW</h1>
+      <p>São Paulo Fashion Week</p>
+    </div>
+    <nav>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+      <ul id="main-menu">
+        <li><a href="index.html" style="color:#a06cff;">Home</a></li>
+        <li><a href="news.html">Noticias</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+        <li><a href="estilistas.html">Estilistas</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Entre em Contato</h2>
+      <p>Envie uma mensagem, dúvida ou proposta. A equipe SPFW responderá em breve.</p>
+    </div>
+  </section>
+  <hr>
+  <div class="contact-container">
+    <h3>Fale Conosco</h3>
+    <form action="conexão.php" method="POST">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..." required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> contato@spfw.com.br</p>
+      <p><strong>Telefone:</strong> (11) 9999-0000</p>
+      <p><strong>Endereço:</strong> Av. das Nações Unidas, São Paulo - SP</p>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 SPFW - Todos os direitos reservados</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/spfw/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/SPFW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/spfw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCcslL01-bATnBUw6caIRLkw" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>

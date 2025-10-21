@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelos - SPFW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="Icons/modelo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      background-color: #0c0c0c;
+      color: #eee;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 8vh auto;
+      padding: 0 20px;
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 5vh;
+      color: #fff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      color: #b47bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-left: 18vh;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-social {
+      flex: 1;
+      min-width: 200px;
+      text-align: left;
+    }
+
+    .footer-info h3 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      font-weight: 300;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 5px;
+    }
+
+    .footer-links a,
+    .footer-social a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover,
+    .footer-social a:hover {
+      color: white;
+    }
+
+    .footer-social h4 {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+      }
+
+      .footer-info,
+      .footer-links,
+      .footer-social {
+        text-align: center;
+      }
+    }
+
+    /* ===== SEÇÃO PRINCIPAL ===== */
+    .container {
+      max-width: 1200px;
+      margin: 8vh auto;
+      padding: 0 20px;
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 5vh;
+      color: #fff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      color: #b47bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="titulo">
+      <h1>SPFW</h1>
+      <p>São Paulo Fashion Week</p>
+    </div>
+    <nav>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+      <ul id="main-menu">
+        <li><a href="index.html" style="color:#a06cff;">Home</a></li>
+        <li><a href="news.html">Notícias</a></li>
+        <li><a href="estilistas.html">Estilistas</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Modelos SPFW</h2>
+    <div class="cards">
+      <div class="card">
+        <img
+          src="https://s2.glbimg.com/OnPIXlVEHeF_DRE2AD_qBfn-v7M=/600x0/filters:quality(70)/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2022/w/w/Yh51xjRVGaykKs5TlHVQ/2020-01-28-gisele-bundchen.jpeg"
+          alt="Gisele Bündchen">
+        <h3>Gisele Bündchen</h3>
+        <p>Origem: Rio Grande do Sul<br>Trabalhos: Victoria's Secret, campanhas internacionais, diversas passarelas da
+          SPFW.</p>
+        <a href="https://www.giselebundchen.com" target="_blank">Perfil Oficial</a>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://s2.glbimg.com/Re1_Zd6oIR-hV_uRA8vATs_KuLo=/0x0:689x570/690x0/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2016/a/7/6KC2F7Te6FGNKaCB5ixQ/adriana-lima.png"
+          alt="Adriana Lima">
+        <h3>Adriana Lima</h3>
+        <p>Origem: Pará<br>Trabalhos: Angel da Victoria's Secret, editoriais internacionais, SPFW.</p>
+        <a href="https://www.adrianalima.com" target="_blank">Perfil Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://biografiaresumida.com.br/wp-content/uploads/2017/12/bronceador-morena_sin_sol-1024x554.jpg"
+          alt="Alessandra Ambrosio">
+        <h3>Alessandra Ambrosio</h3>
+        <p>Origem: Rio Grande do Sul<br>Trabalhos: Victoria's Secret, campanhas internacionais e passarelas brasileiras.
+        </p>
+        <a href="https://www.alessandraambrosio.com" target="_blank">Perfil Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://veja.abril.com.br/wp-content/uploads/2025/03/Izabel-Goulart-03-1.jpg?crop=1&resize=1212,909"
+          alt="Izabel Goulart">
+        <h3>Izabel Goulart</h3>
+        <p>Origem: São Carlos, SP<br>Trabalhos: Victoria's Secret, SPFW, editoriais de moda nacionais e internacionais.
+        </p>
+        <a href="https://www.izabelgoulart.com" target="_blank">Perfil Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://biografiaresumida.com.br/wp-content/uploads/2017/12/Carol-Magalhaes-1-1.webp"
+          alt="Carol Magalhães">
+        <h3>Carol Magalhães</h3>
+        <p>Origem: Minas Gerais<br>Trabalhos: SPFW, campanhas nacionais e internacionais de moda.</p>
+        <a href="https://www.instagram.com/carolmagalhaes/" target="_blank">Perfil Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://caras.com.br/wp-content/uploads/2022-setembro/luiza-brunet-na-revista-caras-9.jpg"
+          alt="Luiza Brunet">
+        <h3>Luiza Brunet</h3>
+        <p>Origem: Minas Gerais<br>Trabalhos: SPFW, campanhas publicitárias, editoriais e televisão.</p>
+        <a href="https://www.instagram.com/luizabrunet/" target="_blank">Perfil Oficial</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 SPFW - Todos os direitos reservados</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/spfw/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/SPFW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/spfw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCcslL01-bATnBUw6caIRLkw" target="_blank"><i
+            class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>

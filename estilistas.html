@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPFW - Estilistas e Marcas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="Icons/estilista.png" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      background-color: #0c0c0c;
+      color: #eee;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 8vh auto;
+      padding: 0 20px;
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 5vh;
+      color: #fff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      color: #b47bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+      }
+
+      .footer-info,
+      .footer-links,
+      .footer-social {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="titulo">
+      <h1>SPFW</h1>
+      <p>São Paulo Fashion Week</p>
+    </div>
+    <nav>
+      <span class="material-symbols-outlined menu-icon">menu</span>
+      <ul id="main-menu">
+        <li><a href="index.html" style="color:#a06cff;">Home</a></li>
+        <li><a href="news.html">Notícias</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Estilistas e Marcas</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://soudealgodao.com.br/wp-content/uploads/2021/06/20181023_contratempo-25-scaled.jpg"
+          alt="Paulo Borges">
+        <h3>Paulo Borges</h3>
+        <p>Fundador da SPFW, conhecido por promover a moda brasileira e incentivar novos talentos nas passarelas
+          nacionais e internacionais.</p>
+        <a href="https://www.spfw.com.br" target="_blank">Site Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+          alt="Piet">
+        <h3>Piet</h3>
+        <p>Marca brasileira que mistura streetwear e alfaiataria, destacando-se na SPFW por seu estilo urbano e
+          contemporâneo.</p>
+        <a href="https://www.instagram.com/piet_/" target="_blank">Instagram Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80"
+          alt="Osklen">
+        <h3>Osklen</h3>
+        <p>Referência em moda sustentável, a Osklen combina elegância e responsabilidade ambiental em suas coleções.</p>
+        <a href="https://www.osklen.com.br" target="_blank">Site Oficial</a>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://harpersbazaar.uol.com.br/moda/lenny-niemeyer-conheca-a-trajetoria-da-estilista-e-de-sua-marca-homonima/attachment/lenny-niemeyer-bazaar-dezembro-janeiro-2022-retrato/"
+          alt="Lenny Niemeyer">
+        <h3>Lenny Niemeyer</h3>
+        <p>Reconhecida por suas coleções de moda praia sofisticada, Lenny é um dos nomes mais fortes da moda brasileira.
+        </p>
+        <a href="https://www.lennyniemeyer.com" target="_blank">Site Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_x6jPpFLgs0cdkTuaDvjZigDIdyA8AjTtkQ&s"
+          alt="Renata Campos">
+        <h3>Renata Campos</h3>
+        <p>Estilista mineira que combina elegância e simplicidade em peças autorais que valorizam o feminino moderno.
+        </p>
+        <a href="https://cdn.renatacampos.com/BANNER_DESKTOP_1.jpg" target="_blank">Site Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://forbes.com.br/wp-content/uploads/2024/03/padrao-Forbes-2024-03-21T175019.808-300x200.jpg"
+          alt="Reinaldo Lourenço">
+        <h3>Reinaldo Lourenço</h3>
+        <p>Nome icônico da moda nacional, conhecido por suas coleções conceituais e desfiles marcantes na SPFW.</p>
+        <a href="https://www.instagram.com/reinaldolourenco/" target="_blank">Instagram Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToB9z3ugojUE_cf6zNx1TzsjHw7_n7en1Izw&s"
+          alt="Apartamento 03">
+        <h3>Apartamento 03</h3>
+        <p>Marca comandada por Luiz Cláudio Silva, com estética elegante e tecidos nobres, celebrando o design autoral
+          brasileiro.</p>
+        <a href="https://www.instagram.com/apartamento03/" target="_blank">Instagram Oficial</a>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEh7yB6gfPz98KJB85BNDCgyWY6O_QhQHYw&s"
+          alt="Estúdio Nacional">
+        <h3>Estúdio Nacional</h3>
+        <p>Marca contemporânea que busca unir tradição e modernidade, representando a nova geração da moda brasileira.
+        </p>
+        <a href="https://www.instagram.com/estudionacional/" target="_blank">Instagram Oficial</a>
+      </div>
+    </div>
+  </div>
+
+    <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 SPFW - Todos os direitos reservados</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/spfw/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/SPFW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/spfw" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCcslL01-bATnBUw6caIRLkw" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>
